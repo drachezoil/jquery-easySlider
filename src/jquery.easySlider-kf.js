@@ -231,10 +231,10 @@
                                 }
                             );
                         };
-                    else {
-						$("li",obj).fadeOut(speed, adjust);	
-						$("li",obj).fadeIn(speed);
-					};
+                    }else {
+			$("li",obj).fadeOut(speed, adjust);	
+			$("li",obj).fadeIn(speed);
+			};
 
                     if(!options.continuous && options.controlsFade)
                     {
