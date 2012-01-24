@@ -54,8 +54,7 @@
             continuous:     false,
             prevNext:       true,
             numeric:        false,
-            numericId:      'controls',
-            fade:    		false
+            numericId:      'controls'
         };
 
         var options = $.extend(defaults, options);
@@ -207,34 +206,29 @@
 
                     var diff = Math.abs(ot-t);
                     var speed = diff*options.speed;
-                    if(!options.fade) {
-                        if(!options.vertical) {
-                            p = (t*w*-1);
-                            ul.animate(
-                                { marginLeft: p },
-                                {
-                                    queue:false,
-                                    duration:speed,
-                                    easing:options.ease,
-                                    complete:adjust
-                                }
-                            );
-                        } else {
-                            p = (t*h*-1);
-                            ul.animate(
-                                { marginTop: p },
-                                {
-                                    queue:false,
-                                    duration:speed,
-                                    easing:options.ease,
-                                    complete:adjust
-                                }
-                            );
-                        };
-                    }else {
-			$("li",obj).fadeOut(speed, adjust);	
-			$("li",obj).fadeIn(speed);
-			};
+	                if(!options.vertical) {
+	                    p = (t*w*-1);
+	                    ul.animate(
+	                        { marginLeft: p },
+	                        {
+	                            queue:false,
+	                            duration:speed,
+	                            easing:options.ease,
+	                            complete:adjust
+	                        }
+	                    );
+	                } else {
+	                    p = (t*h*-1);
+	                    ul.animate(
+	                        { marginTop: p },
+	                        {
+	                            queue:false,
+	                            duration:speed,
+	                            easing:options.ease,
+	                            complete:adjust
+	                        }
+	                    );
+	                };
 
                     if(!options.continuous && options.controlsFade)
                     {
